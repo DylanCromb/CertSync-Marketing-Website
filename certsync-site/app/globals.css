@@ -2,18 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --brand: #2196f3;
-}
+@import '../styles/variables.css';
+@import '../styles/animations.css';
+
 .container {
   @apply mx-auto max-w-[1200px] px-4;
 }
+
+/* Custom utility classes */
 .gradient-hero {
   background: linear-gradient(
-    180deg,
-    #2196f3 0%,
-    rgba(33, 150, 243, 0.75) 45%,
-    rgba(33, 150, 243, 0.15) 80%,
-    rgba(255, 255, 255, 0) 100%
+    -45deg,
+    var(--gradient-1),
+    var(--gradient-2),
+    var(--gradient-3),
+    var(--gradient-4),
+    var(--gradient-5),
+    var(--gradient-6)
   );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.gradient-border {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--secondary-purple),
+    var(--accent-pink)
+  );
+  padding: 2px;
+  border-radius: var(--radius-md);
+}
+
+.gradient-border > * {
+  background: var(--bg-white);
+  border-radius: calc(var(--radius-md) - 2px);
 }

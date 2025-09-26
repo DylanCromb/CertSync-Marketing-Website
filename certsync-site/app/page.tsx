@@ -1,99 +1,209 @@
+import HeroSection from '@/components/HeroSection';
+import SectionHeader from '@/components/SectionHeader';
+import FeatureCard from '@/components/FeatureCard';
+import {
+  Smartphone,
+  Upload,
+  Bell,
+  Shield,
+  Users,
+  BarChart3,
+  FileText,
+} from 'lucide-react';
+
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
-      <section className="gradient-hero pt-24 pb-16">
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Two-Path Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white">
-            All staff licences & permits. Tracked. Verified. On time.
-          </h1>
-          <p className="mt-6 max-w-2xl text-white/90 text-lg">
-            CertSync unites a mobile wallet for employees with an employer
-            dashboard that automates reminders, approvals and audit-ready
-            reporting—so nothing slips through the cracks.
-          </p>
-          <div className="mt-8 flex gap-4">
-            <a
-              className="inline-block rounded-xl bg-white px-5 py-3 font-semibold text-primary shadow hover:shadow-md"
-              href="/pricing"
-            >
-              Start free trial
-            </a>
-            <a
-              className="inline-block rounded-xl border border-white/70 px-5 py-3 font-semibold text-white hover:bg-white/10"
-              href="#apps"
-            >
-              Get the app
-            </a>
+          <SectionHeader
+            title="Choose Your Path"
+            subtitle="Whether you're an employee managing your credentials or an employer overseeing your team, CertSync has you covered."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Employee Section */}
+            <div className="bg-white rounded-lg p-8 shadow-lg hover-lift">
+              <div className="text-center mb-8">
+                <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Smartphone className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  For Employees
+                </h3>
+                <p className="text-gray-600">
+                  Manage your credentials on the go
+                </p>
+              </div>
+
+              {/* Phone Mockup Placeholder */}
+              <div className="phone-mockup bg-gray-100 rounded-2xl p-4 mb-8 mx-auto w-48 h-96 flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                  <Smartphone className="w-16 h-16 mx-auto mb-4" />
+                  <p className="text-sm">Phone Screenshot</p>
+                  <p className="text-xs">180x360px</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      Upload once, never chase again
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Auto-extract expiries from PDFs/photos. Live countdown per
+                      item.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      Smart reminders
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Custom 90/30/7-day schedules. Email/SMS/Slack/WhatsApp*.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      Granular access
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Share per document, revoke anytime. Full view audit trail.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Employer Section */}
+            <div className="bg-white rounded-lg p-8 shadow-lg hover-lift">
+              <div className="text-center mb-8">
+                <div className="w-20 h-20 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  For Employers
+                </h3>
+                <p className="text-gray-600">
+                  Oversee your team&apos;s compliance
+                </p>
+              </div>
+
+              {/* Desktop Mockup Placeholder */}
+              <div className="desktop-mockup bg-gray-100 rounded-lg p-4 mb-8 mx-auto w-full h-48 flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                  <BarChart3 className="w-16 h-16 mx-auto mb-4" />
+                  <p className="text-sm">Dashboard Screenshot</p>
+                  <p className="text-xs">600x400px</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      Bulk assign & verify in minutes
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Roles/sites with valid-from/to; approve or reject with
+                      evidence.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      See risk at a glance
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Dashboard of missing/expiring items; filter by urgency,
+                      role, contractor.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      Auditor-ready reporting
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Export CSV/PDF packs with statuses, dates and evidence
+                      links.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* EMPLOYEES */}
-      <section id="apps" className="py-16">
+      {/* Features Grid */}
+      <section id="apps" className="py-20">
         <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            The CertSync mobile app
-          </h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border p-6">
-              <div className="text-5xl font-black text-primary/80">01</div>
-              <h3 className="mt-3 font-semibold">
-                Upload once, never chase again
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Auto-extract expiries from PDFs/photos. Live countdown per item.
-              </p>
-            </div>
-            <div className="rounded-2xl border p-6">
-              <div className="text-5xl font-black text-primary/80">02</div>
-              <h3 className="mt-3 font-semibold">Smart reminders</h3>
-              <p className="mt-2 text-gray-600">
-                Custom 90/30/7-day schedules. Email/SMS/Slack/WhatsApp*.
-              </p>
-            </div>
-            <div className="rounded-2xl border p-6">
-              <div className="text-5xl font-black text-primary/80">03</div>
-              <h3 className="mt-3 font-semibold">Granular access</h3>
-              <p className="mt-2 text-gray-600">
-                Share per document, revoke anytime. Full view audit trail.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <SectionHeader
+            title="Why Choose CertSync?"
+            subtitle="Powerful features designed to streamline credential management for teams of all sizes."
+          />
 
-      {/* EMPLOYERS */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            The CertSync Web platform
-          </h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border p-6">
-              <div className="text-5xl font-black text-primary/80">01</div>
-              <h3 className="mt-3 font-semibold">
-                Bulk assign & verify in minutes
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Roles/sites with valid-from/to; approve or reject with evidence.
-              </p>
-            </div>
-            <div className="rounded-2xl border p-6">
-              <div className="text-5xl font-black text-primary/80">02</div>
-              <h3 className="mt-3 font-semibold">See risk at a glance</h3>
-              <p className="mt-2 text-gray-600">
-                Dashboard of missing/expiring items; filter by urgency, role,
-                contractor.
-              </p>
-            </div>
-            <div className="rounded-2xl border p-6">
-              <div className="text-5xl font-black text-primary/80">03</div>
-              <h3 className="mt-3 font-semibold">Auditor-ready reporting</h3>
-              <p className="mt-2 text-gray-600">
-                Export CSV/PDF packs with statuses, dates and evidence links.
-              </p>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={<Upload className="w-8 h-8" />}
+              title="Smart Upload"
+              description="Automatically extract expiry dates from PDFs and photos with our advanced OCR technology."
+            />
+            <FeatureCard
+              icon={<Bell className="w-8 h-8" />}
+              title="Intelligent Reminders"
+              description="Customizable notification schedules via email, SMS, Slack, and WhatsApp to keep everyone on track."
+            />
+            <FeatureCard
+              icon={<Shield className="w-8 h-8" />}
+              title="Secure Access"
+              description="Granular permission controls with full audit trails and secure document sharing."
+            />
+            <FeatureCard
+              icon={<Users className="w-8 h-8" />}
+              title="Team Management"
+              description="Bulk operations, role-based assignments, and comprehensive team oversight tools."
+            />
+            <FeatureCard
+              icon={<BarChart3 className="w-8 h-8" />}
+              title="Risk Dashboard"
+              description="Real-time visibility into compliance status with filtering and risk assessment tools."
+            />
+            <FeatureCard
+              icon={<FileText className="w-8 h-8" />}
+              title="Audit Reports"
+              description="Generate comprehensive reports for auditors with all necessary documentation and evidence."
+            />
           </div>
         </div>
       </section>
