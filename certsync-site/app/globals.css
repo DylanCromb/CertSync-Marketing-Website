@@ -2,40 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '../styles/variables.css';
-@import '../styles/animations.css';
-
+:root {
+  --brand: #2196f3;
+}
 .container {
   @apply mx-auto max-w-[1200px] px-4;
 }
-
-/* Custom utility classes */
 .gradient-hero {
   background: linear-gradient(
-    -45deg,
-    var(--gradient-1),
-    var(--gradient-2),
-    var(--gradient-3),
-    var(--gradient-4),
-    var(--gradient-5),
-    var(--gradient-6)
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #c2e9fb 75%,
+    #a1c4fd 100%
   );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 }
-
-.gradient-border {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue),
-    var(--secondary-purple),
-    var(--accent-pink)
-  );
-  padding: 2px;
-  border-radius: var(--radius-md);
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
-.gradient-border > * {
-  background: var(--bg-white);
-  border-radius: calc(var(--radius-md) - 2px);
+.floating {
+  animation: float-subtle 3s ease-in-out infinite;
+}
+@keyframes float-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
